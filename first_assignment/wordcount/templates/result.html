@@ -1,0 +1,16 @@
+<h1>당신이 입력한 텍스트는{{totalword}}자, {{total}} 단어로 구성되어있습니다</h1>
+<a href="{%url 'home'%}">다시하기</a><br>
+
+<h1>입력한 텍스트: </h1>
+{{full}}<br>
+
+<form action="{%url 'search'%}">
+    검색하고 싶은 단어:  <input type ="text" name="search"><br>
+    <input type="submit" value="검색"></form>
+
+
+<h1>단어 카운트: </h1>
+{% for word, howmany in dictionary %}
+{{ word }} : {{ howmany }}
+<br>
+{% endfor %}
